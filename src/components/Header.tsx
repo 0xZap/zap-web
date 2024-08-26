@@ -32,8 +32,11 @@ const Header: React.FC = () => {
           <Box
             sx={{
               backgroundColor: "rgba(255, 255, 255, 0.08)",
-              padding: "5px 10px",
+              padding: "5px 20px",
               borderRadius: "30px",
+              borderWidth: "0.8px",
+              borderColor: "gray",
+              borderStyle: "solid",
               display: "flex",
               justifyContent: "center",
               gap: 2,

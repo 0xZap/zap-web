@@ -7,11 +7,11 @@ const HeroSection: React.FC = () => {
   return (
     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '64px' }}>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
-        <Typography variant="h2" gutterBottom color="white" paddingLeft={'120px'} paddingRight={'120px'}>
+        <Typography variant="h3" gutterBottom color="white" paddingLeft={'220px'} paddingRight={'220px'}>
           Allow anyone to generate ZkProofs to any internet
         </Typography>
-        <Box sx={{ margin: '20px 0' }}>
-          <img src={hero} alt="Hero" width={1200} height={600}/>
+        <Box sx={{ marginLeft: '64px', marginTop: '24px', marginBottom: '44px', borderRadius: '44px', border: '1px solid #B0B0B0', overflow: 'hidden', width: '943px', height: '428px' }}>
+          <img src={hero} alt="Hero" width={943} height={428}/>
         </Box>
         <Button
           variant="contained"
