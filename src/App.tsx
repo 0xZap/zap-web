@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CssBaseline, Box } from "@mui/material";
+import LandingPage from "./pages/LandingPage";
+import styled from "styled-components";
 
-function App() {
+const Background = styled(Box)`
+  background: linear-gradient(135deg, #000000, #00000f, #00000f, #0000ff, #00000f, #000000, #000000);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Background>
+        <LandingPage />
+      </Background>
+    </>
   );
-}
+};
 
 export default App;
