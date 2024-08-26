@@ -42,21 +42,23 @@ const Header: React.FC = () => {
               gap: 2,
             }}
           >
-            <Button sx={{color: "white"}}>Home</Button>
-            <Button sx={{color: "white"}}>How it works</Button>
-            <Button sx={{color: "white"}}>Product</Button>
-            <Button sx={{color: "white"}}>Blogs</Button>
-            <Button sx={{color: "white"}}>Use Cases</Button>
+            <Button sx={{ color: "white" }}>Home</Button>
+            <Button sx={{ color: "white" }}>How it works</Button>
+            <Button sx={{ color: "white" }}>Product</Button>
+            <Button sx={{ color: "white" }}>Blogs</Button>
+            <Button sx={{ color: "white" }}>Use Cases</Button>
           </Box>
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#B0B0B0",
+              opacity: 0.8,
               borderRadius: "20px",
+              backgroundColor: "#0a365e",
               position: "absolute",
               right: 0,
-              marginRight: 0,
-              padding: "5px 20px",
+              padding: "8px 30px",
+              fontSize: "16px",
+              textTransform: "none",
             }}
           >
             Coming Soon

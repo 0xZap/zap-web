@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
 import { CssBaseline } from '@mui/material';
+import SubscribeSection from '../components/SubscribeSection';
 
 const LandingPage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const LandingPage: React.FC = () => {
       <CssBaseline />
       <Header />
       <HeroSection />
+      <SubscribeSection />
       <Footer />
     </>
   );
