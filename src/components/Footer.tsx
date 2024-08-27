@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         </IconButton>
       </Box>
       <Typography variant="body2" sx={{ color: '#aaa' }}>
-        &copy; 2024 Your Company Name. All rights reserved.
+        &copy; 2024 Zap. All rights reserved.
       </Typography>
     </Box>
   );
