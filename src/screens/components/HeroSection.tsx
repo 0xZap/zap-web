@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button, useTheme, useMediaQuery } from "@mui/material";
-import hero from "../assets/hero.png";
+import hero from "../../assets/hero.png";
 
 const HeroSection: React.FC = () => {
 

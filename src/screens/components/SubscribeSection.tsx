@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, TextField, Button } from "@mui/material";
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

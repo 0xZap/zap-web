@@ -13,7 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../assets/logo-appname.svg";
+import logo from "../../assets/logo-appname.svg";
 
 const Header: React.FC = () => {
   const theme = useTheme();

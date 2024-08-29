@@ -1,6 +1,6 @@
 import React from "react";
 import { CssBaseline, Box } from "@mui/material";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./screens/pages/LandingPage";
 import styled from "styled-components";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
