@@ -1,41 +1,56 @@
 import React from "react";
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Button, useTheme, useMediaQuery } from "@mui/material";
 import hero from "../assets/hero.png";
 
 const HeroSection: React.FC = () => {
+
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        display: "flex",
         alignItems: "center",
         justifyContent: "center",
         marginTop: "64px",
+        textAlign: 'center'
       }}
     >
-      <Container maxWidth="lg" sx={{ textAlign: "center" }}>
         <Typography
-          variant="h3"
-          gutterBottom
+          variant={isSmallScreen ? 'h4' : 'h3'}
           color="white"
-          paddingLeft={"220px"}
-          paddingRight={"220px"}
+          sx={{
+            maxWidth: "800px",
+            margin: "0 auto",
+            textAlign: "center",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+          }}
         >
           Allow anyone to generate ZkProofs to any internet
         </Typography>
         <Box
           sx={{
-            marginLeft: "100px",
-            marginTop: "24px",
-            marginBottom: "44px",
-            borderRadius: "44px",
+            borderRadius: "32px",
             border: "1px solid #B0B0B0",
             overflow: "hidden",
-            width: "943px",
-            height: "428px",
+            margin: "24px auto",
+            width: {
+              xs: "90%",
+              sm: "80%", 
+              md: "70%",
+              lg: "60%", 
+              xl: "50%", 
+            },
           }}
         >
-          <img src={hero} alt="Hero" width={943} height={428} />
+          <img
+            src={hero}
+            alt="Hero"
+            style={{
+              width: "100%", // Full width for the image to make it responsive
+            }}
+          />
         </Box>
         <Button
           variant="contained"
@@ -43,14 +58,14 @@ const HeroSection: React.FC = () => {
             opacity: 0.8,
             borderRadius: "20px",
             backgroundColor: "#0a365e",
-            padding: "10px 30px",
+            padding: "8px 30px",
             fontSize: "16px",
             textTransform: "none",
+            marginTop: "20px",
           }}
         >
           Coming Soon
         </Button>
-      </Container>
     </Box>
   );
 };

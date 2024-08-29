@@ -8,7 +8,6 @@ const SubscribeSection: React.FC = () => {
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
-    // You can add your email subscription logic here
     if (email) {
       toast.success("Subscribed successfully!", {
         position: "top-right",
@@ -24,73 +23,71 @@ const SubscribeSection: React.FC = () => {
     <Box
       sx={{
         backgroundColor: "#050520",
-        padding: "40px 40px",
-        borderRadius: "16px",
-        width: "50%",
-        borderWidth: "1px",
-        borderColor: "#333",
-        borderStyle: "solid",
-        maxWidth: "1200px",
-        marginTop: "40px",
+        padding: "40px",
+        borderRadius: "32px",
+        border: "1px solid #333",
+        width: {
+          xs: "90%",
+          sm: "80%", 
+          md: "70%",
+          lg: "60%", 
+          xl: "50%", 
+        },
+        margin: "40px auto",
         textAlign: "center",
-        alignSelf: "center",
       }}
     >
-      <Box sx={{ zIndex: 1, position: "relative" }}>
-        <Box
+      <img src={logo} alt="Logo" width="64px" style={{ marginBottom: "20px" }} />
+      <Typography variant="h4" sx={{ color: "white", marginBottom: "4px" }}>
+        Subscribe to Newsletter
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#aaa", marginBottom: "32px" }}>
+        Stay updated with the latest news by subscribing to our newsletter.
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: "16px",
+        }}
+      >
+        <TextField
+          placeholder="Enter your Email"
+          variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "20px",
+            backgroundColor: "#2b2b2b",
+            borderRadius: "16px",
+            input: { color: "white" },
+            "&:hover fieldset": {
+              borderColor: "#555",
+            },
+            width: "100%",
+            maxWidth: { xs: "100%", sm: "500px" },
+          }}
+        />
+        <Button
+          variant="contained"
+          onClick={handleSubscribe}
+          sx={{
+            background: "linear-gradient(45deg, #00c6ff, #0072ff)",
+            color: "white",
+            borderRadius: "16px",
+            padding: "10px 20px",
+            width: { xs: "100%", sm: "200px" },
+            textTransform: "none",
+            fontSize: "16px",
+            fontWeight: "bold",
+            transition: "transform 0.2s, box-shadow 0.2s",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
-          <img src={logo} alt="Logo" height="40" />
-        </Box>
-        <Typography variant="h4" sx={{ color: "white", marginBottom: "16px" }}>
-          Subscribe to Newsletter
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: "#aaa", marginBottom: "24px" }}
-        >
-          Stay updated with the latest news by subscribing to our newsletter.
-        </Typography>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <TextField
-            placeholder="Enter your Email"
-            variant="outlined"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            sx={{
-              backgroundColor: "#2b2b2b",
-              borderRadius: "16px",
-              input: { color: "white" },
-              "&:hover fieldset": {
-                borderColor: "#555",
-              },
-            }}
-            fullWidth
-          />
-          <Button
-            variant="contained"
-            onClick={handleSubscribe}
-            sx={{
-              backgroundColor: "linear-gradient(45deg, #00c6ff, #0072ff)",
-              color: "white",
-              borderRadius: "24px",
-              padding: "10px 20px",
-              marginLeft: "12px",
-              width: "200px",
-              boxShadow: "0 4px 20px rgba(0, 118, 255, 0.5)",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              transition: "transform 0.2s, box-shadow 0.2s",
-            }}
-          >
-            Join Waitlist
-          </Button>
-        </Box>
+          Join Waitlist
+        </Button>
       </Box>
       <ToastContainer />
     </Box>
