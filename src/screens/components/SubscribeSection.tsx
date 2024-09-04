@@ -9,13 +9,23 @@ const SubscribeSection: React.FC = () => {
 
   const handleSubscribe = () => {
     if (email) {
-      toast.success("Subscribed successfully!", {
+      // toast.success("Subscribed successfully!", {
+      //   position: "top-right",
+      //   autoClose: 1000,
+      //   hideProgressBar: true,
+      //   closeOnClick: true,
+      // });
+      // Redirect to Typeform with the email as a pre-filled parameter
+      const typeformUrl = `https://5j0akg5wc0k.typeform.com/to/YD0bFrPs`;
+      window.location.href = typeformUrl;
+      setEmail("");
+    } else {
+      toast.error("Enter your email", {
         position: "top-right",
         autoClose: 1000,
         hideProgressBar: true,
         closeOnClick: true,
       });
-      setEmail("");
     }
   };
 
