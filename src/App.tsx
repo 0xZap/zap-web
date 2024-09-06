@@ -32,6 +32,22 @@ const Background = styled(Box)`
   flex-direction: column;
 `;
 
+// const Background = styled(Box)`
+//   background: linear-gradient(
+//     135deg,
+//     #000000,
+//     #000000,
+//     #000000,
+//     #000000,
+//     #000000,
+//     #000000,
+//     #000000
+//   );
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+// `;
+
 const App: React.FC = () => {
   return (
     <>

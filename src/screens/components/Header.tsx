@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                 padding: "5px 20px",
                 borderRadius: "30px",
                 borderWidth: "0.8px",
-                borderColor: "gray",
+                borderColor: "#232D6B",
                 borderStyle: "solid",
                 display: "flex",
                 justifyContent: "center",
@@ -110,7 +110,10 @@ const Header: React.FC = () => {
               }}
             >
               {menuItems.map((item) => (
-                <Button key={item} sx={{ color: "white" }}>
+                <Button
+                  key={item}
+                  sx={{ color: "#A7ADBE", textTransform: "capitalize" }}
+                >
                   {item}
                 </Button>
               ))}

@@ -64,9 +64,9 @@ const TeamSection: React.FC = () => {
             title="Co-Founder & CEO"
             image={require("../../assets/team/danilo.png")}
             socialLinks={{
-              linkedin: "https://www.linkedin.com/in/example1",
-              x: "https://x.com/example1",
-              facebook: "https://facebook.com/example1",
+              linkedin: "https://www.linkedin.com",
+              x: "https://x.com/danilowhk2",
+              facebook: "https://facebook.com",
             }}
           />
         </Box>
@@ -76,9 +76,9 @@ const TeamSection: React.FC = () => {
             title="Co-Founder & CTO"
             image={require("../../assets/team/bryan.png")}
             socialLinks={{
-              linkedin: "https://www.linkedin.com/in/example2",
-              x: "https://x.com/example2",
-              facebook: "https://facebook.com/example2",
+              linkedin: "https://www.linkedin.com/in/bryanborck",
+              x: "https://x.com/BorckBryan",
+              facebook: "https://facebook.com/example",
             }}
           />
         </Box>
@@ -88,9 +88,9 @@ const TeamSection: React.FC = () => {
             title="Front-end Engineer"
             image={require("../../assets/team/lovish.png")}
             socialLinks={{
-              linkedin: "https://www.linkedin.com/in/example3",
-              x: "https://x.com/example3",
-              facebook: "https://facebook.com/example3",
+              linkedin: "https://www.linkedin.com",
+              x: "https://x.com",
+              facebook: "https://facebook.com",
             }}
           />
         </Box>
