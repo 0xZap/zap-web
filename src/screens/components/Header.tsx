@@ -41,7 +41,7 @@ const Header: React.FC = () => {
             padding: theme.spacing(2, 0),
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             {isMobile && (
               <IconButton
                 size="large"
@@ -49,13 +49,17 @@ const Header: React.FC = () => {
                 color="inherit"
                 aria-label="menu"
                 onClick={handleMenuOpen}
-                sx={{ mr: 2, color: 'white' }}
+                sx={{ mr: 2, color: "white" }}
               >
                 <MenuIcon />
               </IconButton>
             )}
             <Typography component="div">
-              <img src={logo} alt="Logo" style={{ marginTop: '8px', height: "44px" }} />
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ marginTop: "8px", height: "44px" }}
+              />
             </Typography>
           </Box>
 
@@ -65,24 +69,24 @@ const Header: React.FC = () => {
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
               sx={{
-                '& .MuiPaper-root': {
-                  backgroundColor: 'rgba(10, 25, 41, 0.95)',
-                  borderRadius: '10px',
-                  borderWidth: '0.8px',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                  borderStyle: 'solid',
-                  minWidth: '200px',
+                "& .MuiPaper-root": {
+                  backgroundColor: "rgba(10, 25, 41, 0.95)",
+                  borderRadius: "10px",
+                  borderWidth: "0.8px",
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                  borderStyle: "solid",
+                  minWidth: "200px",
                 },
               }}
             >
               {menuItems.map((item) => (
-                <MenuItem 
-                  key={item} 
-                  onClick={handleMenuClose} 
-                  sx={{ 
-                    color: 'white',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                <MenuItem
+                  key={item}
+                  onClick={handleMenuClose}
+                  sx={{
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
                     },
                   }}
                 >
@@ -118,7 +122,7 @@ const Header: React.FC = () => {
             sx={{
               opacity: 0.8,
               borderRadius: "20px",
-              backgroundColor: "#0a365e",
+              backgroundColor: "#090953",
               padding: "8px 30px",
               fontSize: "16px",
               textTransform: "none",
