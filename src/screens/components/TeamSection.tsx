@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import ProfileCard from "./Team/ProfileCard";
 
 const TeamSection: React.FC = () => {

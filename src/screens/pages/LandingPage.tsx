@@ -8,7 +8,7 @@ import SubscribeSection from "../components/SubscribeSection";
 import HowItWorksSection from "../components/HowItWorksSection";
 import ProductsSection from "../components/ProductsSection";
 import UseCaseSection from "../components/UseCaseSection";
-import BlogSection from "../components/BlogSection";
+// import BlogSection from "../components/BlogSection";
 import TeamSection from "../components/TeamSection";
 
 const LandingPage: React.FC = () => {
