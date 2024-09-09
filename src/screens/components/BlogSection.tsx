@@ -19,6 +19,7 @@ const BlogSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id="Blogs"
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}

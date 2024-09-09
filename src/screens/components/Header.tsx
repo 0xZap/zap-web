@@ -28,10 +28,17 @@ const Header: React.FC = () => {
     setAnchorEl(null);
   };
 
+  const handleScrollToSection = (sectionId:string) => {
+    const section = document.getElementById(sectionId);
+    if(section) {
+      section.scrollIntoView({behavior:"smooth"});
+    }
+  };
+
   const menuItems = ["Home", "How it works", "Product", "Blogs", "Use Cases"];
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <AppBar position="static" color="transparent" elevation={0} id="Home">
       <Container maxWidth="lg">
         <Toolbar
           disableGutters
@@ -82,7 +89,10 @@ const Header: React.FC = () => {
               {menuItems.map((item) => (
                 <MenuItem
                   key={item}
-                  onClick={handleMenuClose}
+                  onClick={() => {
+                    handleMenuClose();
+                    handleScrollToSection(item);
+                  }}
                   sx={{
                     color: "white",
                     "&:hover": {
@@ -113,6 +123,7 @@ const Header: React.FC = () => {
                 <Button
                   key={item}
                   sx={{ color: "#A7ADBE", textTransform: "capitalize" }}
+                  onClick={() => handleScrollToSection(item)}
                 >
                   {item}
                 </Button>
