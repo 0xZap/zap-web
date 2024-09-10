@@ -42,7 +42,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         }}
       >
         <img
-          src={image}
+          src={require("../../../assets/team/danilo.png")}
           alt={name}
           style={{
             width: "100%",
@@ -93,7 +93,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             >
               {key === "linkedin" && <LinkedInIcon sx={{ fontSize: "20px" }} />}
               {key === "x" && <XIcon sx={{ fontSize: "20px" }} />}
-              {key === "telegram" && <TelegramIcon sx={{ fontSize: "20px" }} />}
+              {key === "facebook" && <TelegramIcon sx={{ fontSize: "20px" }} />}
             </IconButton>
           ))}
         </Box>

@@ -64,7 +64,7 @@ const TeamSection: React.FC = () => {
             <ProfileCard
               name={member.name}
               title={member.title}
-              image={require(member.image)}
+              image={member.image}
               socialLinks={member.socialLinks}
             />
           </Box>

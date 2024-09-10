@@ -27,7 +27,7 @@ const teamMembers: TeamMember[] = [
   new TeamMember(
     "Danilo Kim",
     "Co-Founder & CEO",
-    "../../assets/team/danilo.png",
+    "../../../assets/team/danilo.png",
     {
       linkedin: "https://www.linkedin.com/in/danilo-kim-59706540/",
       x: "https://x.com/danilowhk2",
@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
   new TeamMember(
     "Bryan Borck",
     "Co-Founder & CTO",
-    "../../assets/team/bryan.png",
+    "../../../assets/team/bryan.png",
     {
       linkedin: "https://www.linkedin.com/in/bryan-borck/",
       x: "https://x.com/BorckBryan",
@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
   new TeamMember(
     "Lovish",
     "Front-end Engineer",
-    "../../assets/team/lovish.png",
+    "../../../assets/team/lovish.png",
     {
       linkedin: "https://www.linkedin.com",
       x: "https://x.com",
@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
   new TeamMember(
     "Daniel Yuki",
     "Full Stack Intern",
-    "../../assets/team/daniel.jpg",
+    "../../../assets/team/daniel.jpg",
     {
       linkedin: "https://www.linkedin.com/in/danielyukihiga/",
       x: "https://x.com",
@@ -67,7 +67,7 @@ const teamMembers: TeamMember[] = [
   new TeamMember(
     "Felipe Ribeiro",
     "Full Stack Intern",
-    "../../assets/team/felipe.jpeg",
+    "../../../assets/team/felipe.jpeg",
     {
       linkedin: "https://www.linkedin.com/in/felipe-farias-ribeiro/",
       x: "https://x.com",
