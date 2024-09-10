@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import ProfileCard from "./Team/ProfileCard";
+import teamMembers from "./Team/TeamMember";
 
 const TeamSection: React.FC = () => {
   const theme = useTheme();
@@ -58,42 +59,16 @@ const TeamSection: React.FC = () => {
           margin: "0 auto",
         }}
       >
-        <Box sx={{ gridArea: { md: "card1" } }}>
+        {teamMembers.map((member, index) => 
+          <Box sx={{ gridArea: { md: `card${index + 1}` } }} key={index}>
           <ProfileCard
-            name="Danilo"
-            title="Co-Founder & CEO"
-            image={require("../../assets/team/danilo.png")}
-            socialLinks={{
-              linkedin: "https://www.linkedin.com",
-              x: "https://x.com/danilowhk2",
-              facebook: "https://facebook.com",
-            }}
+            name={member.name}
+            title={member.title}
+            image={(member.image)}
+            socialLinks={member.socialLinks}
           />
         </Box>
-        <Box sx={{ gridArea: { md: "card2" } }}>
-          <ProfileCard
-            name="Bryan Borck"
-            title="Co-Founder & CTO"
-            image={require("../../assets/team/bryan.png")}
-            socialLinks={{
-              linkedin: "https://www.linkedin.com/in/bryanborck",
-              x: "https://x.com/BorckBryan",
-              facebook: "https://facebook.com/example",
-            }}
-          />
-        </Box>
-        <Box sx={{ gridArea: { md: "card3" } }}>
-          <ProfileCard
-            name="Lovish"
-            title="Front-end Engineer"
-            image={require("../../assets/team/lovish.png")}
-            socialLinks={{
-              linkedin: "https://www.linkedin.com",
-              x: "https://x.com",
-              facebook: "https://facebook.com",
-            }}
-          />
-        </Box>
+        )}
       </Box>
     </Box>
   );
