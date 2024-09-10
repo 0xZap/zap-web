@@ -66,7 +66,7 @@ const TeamSection: React.FC = () => {
             socialLinks={{
               linkedin: "https://www.linkedin.com",
               x: "https://x.com/danilowhk2",
-              facebook: "https://facebook.com",
+              telegram: "https://t.me/",
             }}
           />
         </Box>
@@ -78,7 +78,7 @@ const TeamSection: React.FC = () => {
             socialLinks={{
               linkedin: "https://www.linkedin.com/in/bryanborck",
               x: "https://x.com/BorckBryan",
-              facebook: "https://facebook.com/example",
+              telegram: "https://t.me/bryanborck",
             }}
           />
         </Box>
@@ -90,7 +90,7 @@ const TeamSection: React.FC = () => {
             socialLinks={{
               linkedin: "https://www.linkedin.com",
               x: "https://x.com",
-              facebook: "https://facebook.com",
+              telegram: "https://t.me/",
             }}
           />
         </Box>

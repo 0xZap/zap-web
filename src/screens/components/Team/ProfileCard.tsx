@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, Box, Typography, IconButton } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import XIcon from "@mui/icons-material/X";
 
 interface ProfileCardProps {
@@ -12,7 +12,7 @@ interface ProfileCardProps {
   socialLinks: {
     linkedin: string;
     x: string;
-    facebook: string;
+    telegram: string;
   };
 }
 
@@ -93,7 +93,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             >
               {key === "linkedin" && <LinkedInIcon sx={{ fontSize: "20px" }} />}
               {key === "x" && <XIcon sx={{ fontSize: "20px" }} />}
-              {key === "facebook" && <FacebookIcon sx={{ fontSize: "20px" }} />}
+              {key === "telegram" && <TelegramIcon sx={{ fontSize: "20px" }} />}
             </IconButton>
           ))}
         </Box>
