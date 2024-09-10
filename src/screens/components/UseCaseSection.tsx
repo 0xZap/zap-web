@@ -13,6 +13,7 @@ const UseCaseSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id="Use Cases"
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}
