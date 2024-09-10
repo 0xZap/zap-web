@@ -12,7 +12,7 @@ interface ProfileCardProps {
   socialLinks: {
     linkedin: string;
     x: string;
-    telegram: string;
+    facebook: string;
   };
 }
 

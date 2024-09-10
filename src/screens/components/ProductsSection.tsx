@@ -19,6 +19,7 @@ const ProductsSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id="Product"
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}

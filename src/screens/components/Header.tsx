@@ -24,30 +24,11 @@ const Header: React.FC = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = (sectionId: string = "") => {
+  const handleMenuClose = () => {
     setAnchorEl(null);
-    if (sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const menuItems = [
-    { label: "Home", sectionId: "home" },
-    { label: "How it works", sectionId: "how-it-works" },
-    { label: "Product", sectionId: "product" },
-    { label: "Blogs", sectionId: "blogs" },
-    { label: "Use Cases", sectionId: "use-cases" },
-  ];
+  const menuItems = ["Home", "How it works", "Product", "Blogs", "Use Cases"];
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
@@ -86,7 +67,7 @@ const Header: React.FC = () => {
             <Menu
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
-              onClose={() => handleMenuClose()}
+              onClose={handleMenuClose}
               sx={{
                 "& .MuiPaper-root": {
                   backgroundColor: "rgba(10, 25, 41, 0.95)",
@@ -100,8 +81,8 @@ const Header: React.FC = () => {
             >
               {menuItems.map((item) => (
                 <MenuItem
-                  key={item.label}
-                  onClick={() => handleMenuClose(item.sectionId)}
+                  key={item}
+                  onClick={handleMenuClose}
                   sx={{
                     color: "white",
                     "&:hover": {
@@ -109,7 +90,7 @@ const Header: React.FC = () => {
                     },
                   }}
                 >
-                  {item.label}
+                  {item}
                 </MenuItem>
               ))}
             </Menu>
@@ -130,11 +111,10 @@ const Header: React.FC = () => {
             >
               {menuItems.map((item) => (
                 <Button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.sectionId)}
+                  key={item}
                   sx={{ color: "#A7ADBE", textTransform: "capitalize" }}
                 >
-                  {item.label}
+                  {item}
                 </Button>
               ))}
             </Box>

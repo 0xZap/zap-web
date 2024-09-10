@@ -18,6 +18,7 @@ const HowItWorksSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id="How it works"
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}
