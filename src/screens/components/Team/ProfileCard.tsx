@@ -42,7 +42,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         }}
       >
         <img
-          src={require("../../../assets/team/danilo.png")}
+          src={image}
           alt={name}
           style={{
             width: "100%",
