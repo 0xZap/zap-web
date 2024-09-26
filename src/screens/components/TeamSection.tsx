@@ -1,15 +1,14 @@
 import React from "react";
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import ProfileCard from "./Team/ProfileCard";
 import teamMembers from "../../utils/team";
+import TeamTitle from "./Team/TeamTitle";
 
 interface TeamSectionProps {
   id: string;
 }
 
 const TeamSection: React.FC<TeamSectionProps> = ({ id }) => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box
@@ -21,51 +20,21 @@ const TeamSection: React.FC<TeamSectionProps> = ({ id }) => {
       }}
       id={id}
     >
-      <Typography
-        variant={isSmallScreen ? "h4" : "h3"}
-        color="white"
-        sx={{
-          maxWidth: "800px",
-          margin: "0 auto",
-          textAlign: "center",
-          paddingLeft: "20px",
-          paddingRight: "20px",
-          fontFamily: "Space Grotesk, sans-serif",
-        }}
-      >
-        Our amazing team
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          maxWidth: isSmallScreen ? "90%" : "600px",
-          margin: "16px auto 0",
-          textAlign: "center",
-          fontSize: isSmallScreen ? "0.9rem" : "1rem",
-          lineHeight: 1.5,
-          paddingLeft: "20px",
-          paddingBottom: "60px",
-          fontFamily: "Space Grotesk, sans-serif",
-          color: "#C2CDE7",
-        }}
-      >
-        Sunt officia minim exercitation in cupidatat veniam minim dolore mollit
-        cillum do ea velit. Occaecat minim ipsum laboris do laborum
-      </Typography>
+      <TeamTitle />
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "center",
-          gap: "60px",
+          display: "grid", // Change display to grid
+          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }, // 1 column for xs, 2 columns for sm, 3 columns for md and up
+          justifyItems: "center",
+          gap: "100px", // Gap between the cards
           padding: { xs: "20px", md: "20px 40px" },
-          maxWidth: "1200px",
-          marginTop: "60px",
+          maxWidth: "1000px",
+          marginTop: "80px",
           margin: "0 auto",
         }}
       >
         {teamMembers.map((member, index) => (
-          <Box sx={{ gridArea: { md: `card${index + 1}` } }} key={index}>
+          <Box key={index} sx={{background: "transparent"}}>
             <ProfileCard
               name={member.name}
               title={member.title}

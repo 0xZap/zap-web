@@ -3,7 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import hugimage from '../../../assets/usecase/use_hug.svg';
 import starsimage from '../../../assets/usecase/use_stars.svg';
 
-const UseCaseTitle = () => {
+const TeamTitle = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -35,7 +35,7 @@ const UseCaseTitle = () => {
         />
 
         {/* Image Above the Title */}
-        <Box
+        {/* <Box
             component="img"
             src={hugimage}
             alt="Use Cases"
@@ -44,7 +44,7 @@ const UseCaseTitle = () => {
             height: 'auto',
             margin: '0 auto 6px', // Margin to create space below the image
             }}
-        />
+        /> */}
 
         {/* Title Typography */}
         <Typography
@@ -61,7 +61,7 @@ const UseCaseTitle = () => {
             lineHeight: 1,
             }}
         >
-            Use Cases for <br /> our Solution
+            Our amazing team
         </Typography>
 
         {/* Body Typography */}
@@ -75,15 +75,15 @@ const UseCaseTitle = () => {
             lineHeight: 1.5,
             paddingLeft: '20px',
             paddingRight: '20px',
-            paddingBottom: '20px',
+            paddingBottom: '100px',
             fontFamily: 'Space Grotesk, sans-serif',
             color: '#C2CDE7',
             }}
         >
-            Zap can bring a wide range of use cases to life. <br /> With zkTLS and Data Pools, we can give data back to the users.
+            We are united by our passion to bring <br></br> the decentralized data concept to the masses.
         </Typography>
         </Box>
     );
 };
 
-export default UseCaseTitle;
+export default TeamTitle;

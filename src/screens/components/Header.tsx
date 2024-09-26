@@ -53,7 +53,6 @@ const Header: React.FC = () => {
       elevation={0}
       sx={{
         backgroundColor: 'rgba(0, 0, 0, 0)',
-        // backdropFilter: 'blur(10px)',
         zIndex: theme.zIndex.drawer + 1,
       }}
     >
@@ -132,7 +131,7 @@ const Header: React.FC = () => {
             <Box
               sx={{
                 backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                backdropFilter: 'blur(10px)',
+                backdropFilter: 'blur(20px)',
                 padding: '10px 40px',
                 borderRadius: '30px',
                 borderWidth: '0.6px',
@@ -150,11 +149,11 @@ const Header: React.FC = () => {
                   href={`#${item.id}`}
                   underline="none"
                   sx={{
-                    color: activeSection === item.id ? `${theme.palette.primary.main}` : '#ffffff', // Highlight active section
+                    color: activeSection === item.id ? `${theme.palette.primary.main}` : '#ffffff', 
                     textTransform: 'capitalize',
                     fontWeight: activeSection === item.id ? 'bold' : 'normal',
                     '&:hover': {
-                      color: '#ffffff',
+                      color: activeSection === item.id ? `${theme.palette.primary.main}` : '#a0aec0', 
                     },
                     padding: '5px 5px',
                   }}

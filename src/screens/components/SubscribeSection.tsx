@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Box, Typography, TextField, Button } from "@mui/material";
-import logo from "../../assets/logo.svg";
+import { Box, Typography, TextField, Button, useTheme } from "@mui/material";
+import logo from "../../assets/footer/logo_footer.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import centerMask from '../../assets/footer/effect.svg';
+import rightAsset from '../../assets/footer/right_asset.svg';
+import leftAsset from '../../assets/footer/left_asset.svg';
 
 const SubscribeSection: React.FC = () => {
+  const theme = useTheme();
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
@@ -32,26 +36,80 @@ const SubscribeSection: React.FC = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#050520",
-        padding: "40px",
+        position: "relative", // Makes the box a relative container for absolute positioning
+        backgroundColor: "#0B0B0D",
+        padding: "60px",
         borderRadius: "32px",
-        border: "1px solid #333",
+        border: `1px solid ${theme.palette.primary.main}`,
         width: {
           xs: "90%",
-          sm: "80%", 
+          sm: "80%",
           md: "70%",
-          lg: "60%", 
-          xl: "50%", 
+          lg: "60%",
+          xl: "50%",
         },
-        margin: "40px auto",
+        margin: "60px auto",
         textAlign: "center",
+        overflow: "hidden", // Ensures content doesn't overflow
       }}
     >
-      <img src={logo} alt="Logo" width="64px" style={{ marginBottom: "20px" }} />
-      <Typography variant="h4" sx={{ color: "white", marginBottom: "4px" }}>
+      {/* Left Background Image */}
+      <Box
+        component="img"
+        src={leftAsset}
+        alt=""
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 40,
+          width: "150px", // Adjust as needed
+          height: "auto",
+          zIndex: 0, // Keep background behind content
+        }}
+      />
+
+      {/* Center Background Image */}
+      <Box
+        component="img"
+        src={centerMask}
+        alt=""
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: "50%",
+          transform: "translateX(-50%)", // Center the image horizontally
+          width: "100%", // Adjust as needed
+          height: "auto",
+          zIndex: 0, // Keep background behind content
+        }}
+      />
+
+      {/* Right Background Image */}
+      <Box
+        component="img"
+        src={rightAsset}
+        alt=""
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 40,
+          width: "150px", // Adjust as needed
+          height: "auto",
+          zIndex: 0, // Keep background behind content
+        }}
+      />
+
+      {/* Exposed Content */}
+      <img
+        src={logo}
+        alt="Logo"
+        width="72px"
+        style={{ marginBottom: "20px", marginTop: "5px", zIndex: 1 }} // Ensure content is above background
+      />
+      <Typography variant="h4" sx={{ color: "white", marginBottom: "4px", zIndex: 1, fontFamily: "Inter, sans-serif", fontWeight: 600 }}>
         Subscribe to Newsletter
       </Typography>
-      <Typography variant="body1" sx={{ color: "#aaa", marginBottom: "32px" }}>
+      <Typography variant="body1" sx={{ color: "#aaa", marginBottom: "48px", zIndex: 1 }}>
         Stay updated with the latest news by subscribing to our newsletter.
       </Typography>
       <Box
@@ -59,7 +117,8 @@ const SubscribeSection: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           flexDirection: { xs: "column", sm: "row" },
-          gap: "16px",
+          gap: "18px",
+          zIndex: 1, // Keep content above the background
         }}
       >
         <TextField
@@ -69,7 +128,7 @@ const SubscribeSection: React.FC = () => {
           onChange={(e) => setEmail(e.target.value)}
           sx={{
             backgroundColor: "#2b2b2b",
-            borderRadius: "16px",
+            borderRadius: "6px",
             input: { color: "white" },
             "&:hover fieldset": {
               borderColor: "#555",
@@ -82,24 +141,27 @@ const SubscribeSection: React.FC = () => {
           variant="contained"
           onClick={handleSubscribe}
           sx={{
-            background: "linear-gradient(45deg, #00c6ff, #0072ff)",
+            background: "#090953",
             color: "white",
-            borderRadius: "16px",
+            borderRadius: "12px",
             padding: "10px 20px",
             width: { xs: "100%", sm: "200px" },
             textTransform: "none",
             fontSize: "16px",
             fontWeight: "bold",
             transition: "transform 0.2s, box-shadow 0.2s",
-            "&:hover": {
-              transform: "scale(1.05)",
+            '&:hover': {
+                backgroundColor: '#090953',
+                cursor: 'pointer',
+                transform: 'scale(1.05)', 
+                boxShadow: theme.shadows[1], 
             },
           }}
         >
           Join Waitlist
         </Button>
       </Box>
-      <ToastContainer />
+      <ToastContainer style={{ zIndex: 1 }} /> {/* Ensure Toast is above background */}
     </Box>
   );
 };

@@ -3,7 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import hugimage from '../../../assets/usecase/use_hug.svg';
 import starsimage from '../../../assets/usecase/use_stars.svg';
 
-const UseCaseTitle = () => {
+const ProductTitle = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -61,7 +61,7 @@ const UseCaseTitle = () => {
             lineHeight: 1,
             }}
         >
-            Use Cases for <br /> our Solution
+            Products
         </Typography>
 
         {/* Body Typography */}
@@ -86,4 +86,4 @@ const UseCaseTitle = () => {
     );
 };
 
-export default UseCaseTitle;
+export default ProductTitle;
