@@ -24,13 +24,13 @@ const UseCaseTitle = () => {
             src={starsimage}
             alt=""
             sx={{
-            position: 'absolute',
-            top: '0',
-            left: '50%',
-            transform: 'translateX(-50%)', // Center the background image
-            width: '100%',
-            height: 'auto',
-            zIndex: -20, // Send background image behind the content
+                position: 'absolute',
+                top: '0',
+                left: '50%',
+                transform: 'translateX(-50%)', // Center the background image
+                width: '100%',
+                height: 'auto',
+                zIndex: -20, // Send background image behind the content
             }}
         />
 
@@ -40,9 +40,9 @@ const UseCaseTitle = () => {
             src={hugimage}
             alt="Use Cases"
             sx={{
-            width: isSmallScreen ? '80px' : '120px',
-            height: 'auto',
-            margin: '0 auto 6px', // Margin to create space below the image
+                height: isSmallScreen ? '30px' : '35px',
+                width: 'auto',
+                margin: '0 auto 6px', // Margin to create space below the image
             }}
         />
 
@@ -51,14 +51,14 @@ const UseCaseTitle = () => {
             variant={isSmallScreen ? 'h4' : 'h3'}
             color="white"
             sx={{
-            maxWidth: '800px',
-            margin: '0 auto',
-            textAlign: 'center',
-            paddingLeft: '20px',
-            paddingRight: '20px',
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 900,
-            lineHeight: 1,
+                maxWidth: '800px',
+                margin: '0 auto',
+                textAlign: 'center',
+                paddingLeft: '20px',
+                paddingRight: '20px',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 900,
+                lineHeight: 1,
             }}
         >
             Use Cases for <br /> our Solution
@@ -68,16 +68,16 @@ const UseCaseTitle = () => {
         <Typography
             variant="body1"
             sx={{
-            maxWidth: isSmallScreen ? '90%' : '600px',
-            margin: '16px auto 0',
-            textAlign: 'center',
-            fontSize: isSmallScreen ? '0.9rem' : '1rem',
-            lineHeight: 1.5,
-            paddingLeft: '20px',
-            paddingRight: '20px',
-            paddingBottom: '20px',
-            fontFamily: 'Space Grotesk, sans-serif',
-            color: '#C2CDE7',
+                maxWidth: isSmallScreen ? '90%' : '600px',
+                margin: '16px auto 0',
+                textAlign: 'center',
+                fontSize: isSmallScreen ? '0.9rem' : '1rem',
+                lineHeight: 1.5,
+                paddingLeft: '20px',
+                paddingRight: '20px',
+                paddingBottom: '20px',
+                fontFamily: 'Space Grotesk, sans-serif',
+                color: '#C2CDE7',
             }}
         >
             Zap can bring a wide range of use cases to life. <br /> With zkTLS and Data Pools, we can give data back to the users.

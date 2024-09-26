@@ -22,7 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
       sx={{
         alignItems: "center",
         justifyContent: "center",
-        marginTop: "64px",
+        marginTop: "150px",
         textAlign: "center",
       }}
       id={id}
