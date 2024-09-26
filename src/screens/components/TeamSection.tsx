@@ -3,7 +3,11 @@ import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import ProfileCard from "./Team/ProfileCard";
 import teamMembers from "../../utils/team";
 
-const TeamSection: React.FC = () => {
+interface TeamSectionProps {
+  id: string;
+}
+
+const TeamSection: React.FC<TeamSectionProps> = ({ id }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -15,6 +19,7 @@ const TeamSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id={id}
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}

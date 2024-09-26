@@ -16,12 +16,12 @@ const LandingPage: React.FC = () => {
     <>
       <CssBaseline />
       <Header />
-      <HeroSection />
-      <HowItWorksSection />
-      <ProductsSection />
-      <UseCaseSection />
+      <HeroSection id="home"/>
+      <HowItWorksSection id="how-it-works"/>
+      <ProductsSection id="product"/>
+      <UseCaseSection id="use-cases" />
       {/* <BlogSection /> */}
-      <TeamSection />
+      <TeamSection id="team"/>
       <SubscribeSection />
       <Footer />
     </>

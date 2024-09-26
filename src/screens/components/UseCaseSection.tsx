@@ -7,7 +7,11 @@ import image4 from '../../assets/usecase/use_init4.svg';
 import UseCaseCard from "./UseCase/UseCaseCard";
 import UseCaseTitle from "./UseCase/UseCaseTitle";
 
-const UseCaseSection: React.FC = () => {
+interface UseCaseSectionProps {
+  id: string;
+}
+
+const UseCaseSection: React.FC<UseCaseSectionProps> = ({ id }) => {
 
   const useCases = [
     {
@@ -40,7 +44,7 @@ const UseCaseSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
-      id="Use Cases"
+      id={id}
     >
       <UseCaseTitle />
       <Box

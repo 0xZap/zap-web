@@ -9,7 +9,11 @@ import {
 import hero from "../../assets/hero_bkg.png";
 import zapicon from "../../assets/hero_zap.png";
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  id: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -21,6 +25,7 @@ const HeroSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
+      id={id}
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}

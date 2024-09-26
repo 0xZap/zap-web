@@ -6,7 +6,11 @@ import WorkCard03 from "./HowItWorks/WorkCard03";
 import WorkCard04 from "./HowItWorks/WorkCard04";
 import WorkCard05 from "./HowItWorks/WorkCard05";
 
-const HowItWorksSection: React.FC = () => {
+interface HowItWorksSectionProps {
+  id: string;
+}
+
+const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ id }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -18,7 +22,7 @@ const HowItWorksSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
-      id="How it works"
+      id={id}
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}

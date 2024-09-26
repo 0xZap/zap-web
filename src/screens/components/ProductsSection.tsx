@@ -2,12 +2,15 @@ import React from "react";
 import {
   Box,
   Typography,
-  Button,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
 
-const ProductsSection: React.FC = () => {
+interface ProductSectionProps {
+  id: string;
+}
+
+const ProductsSection: React.FC<ProductSectionProps> = ({ id }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -19,7 +22,7 @@ const ProductsSection: React.FC = () => {
         marginTop: "64px",
         textAlign: "center",
       }}
-      id="Product"
+      id={id}
     >
       <Typography
         variant={isSmallScreen ? "h4" : "h3"}
