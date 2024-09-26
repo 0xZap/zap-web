@@ -2,19 +2,8 @@ import React from "react";
 import { CssBaseline, Box } from "@mui/material";
 import LandingPage from "./screens/pages/LandingPage";
 import styled from "styled-components";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0, // mobile phones
-      sm: 600, // tablets
-      md: 960, // small laptops
-      lg: 1280, // desktops
-      xl: 1920, // large screens
-    },
-  },
-});
+import { ThemeProvider } from "@mui/material/styles";
+import theme from './utils/theme'; // Import the custom theme
 
 const Background = styled(Box)`
   background: linear-gradient(
@@ -50,12 +39,12 @@ const Background = styled(Box)`
 
 const App: React.FC = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Background>
         <LandingPage />
       </Background>
-    </>
+    </ThemeProvider>
   );
 };
 
