@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import hugimage from '../../../assets/usecase/use_hug.svg';
+import hugimage from '../../../assets/product/product_hug.svg';
 import starsimage from '../../../assets/usecase/use_stars.svg';
 
 const ProductTitle = () => {
@@ -80,7 +80,7 @@ const ProductTitle = () => {
             color: '#C2CDE7',
             }}
         >
-            Zap can bring a wide range of use cases to life. <br /> With zkTLS and Data Pools, we can give data back to the users.
+            Our products are designed to help you get the most out of your data
         </Typography>
         </Box>
     );

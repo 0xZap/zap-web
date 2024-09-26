@@ -12,26 +12,24 @@ const SubscribeSection: React.FC = () => {
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
-    if (email) {
-      // toast.success("Subscribed successfully!", {
-      //   position: "top-right",
-      //   autoClose: 1000,
-      //   hideProgressBar: true,
-      //   closeOnClick: true,
-      // });
-      // Redirect to Typeform with the email as a pre-filled parameter
-      const typeformUrl = `https://5j0akg5wc0k.typeform.com/to/YD0bFrPs`;
-      window.location.href = typeformUrl;
-      setEmail("");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation pattern
+  
+    if (email.match(emailPattern)) {
+      // Redirect user to Google Form (with optional pre-filled email address if needed)
+      const googleFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLScqf95GOc8xh_786mcBaPOGkUXg0MaGo40OTF0WZHcZ6sqzEg/viewform?usp=pp_url&entry.1879940689=${encodeURIComponent(email)}`;
+      window.open(googleFormUrl, "_blank");
+  
+      setEmail(""); // Optionally reset the email state
     } else {
-      toast.error("Enter your email", {
+      toast.error("Please enter a valid email address", {
         position: "top-right",
-        autoClose: 1000,
+        autoClose: 3000,
         hideProgressBar: true,
         closeOnClick: true,
       });
     }
   };
+  
 
   return (
     <Box
