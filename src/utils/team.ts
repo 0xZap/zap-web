@@ -62,7 +62,7 @@ const teamMembers: TeamMember[] = [
     images['danilo.png'],
     {
       x: "https://x.com/danilowhk2",
-      telegram: "https://telegram.com",
+      telegram: "https://t.me/danilo1080",
       linkedin: "https://www.linkedin.com/in/danilo-kim-59706540/",
     }
   ),
@@ -72,7 +72,7 @@ const teamMembers: TeamMember[] = [
     images['bryan.png'],
     {
       x: "https://x.com/BorckBryan",
-      telegram: "https://telegram.com/example",
+      telegram: "https://t.me/bryanborck",
       linkedin: "https://www.linkedin.com/in/bryan-borck/",
     }
   ),
@@ -81,29 +81,29 @@ const teamMembers: TeamMember[] = [
     "Developer",
     images['daniel.jpg'],
     {
-      x: "https://x.com",
-      telegram: "https://telegram.com",
+      x: "https://x.com/danielyukihiga",
+      telegram: "https://t.me/DanielYukiHiga",
       linkedin: "https://www.linkedin.com/in/danielyukihiga/",
     }
   ),
   new TeamMember(
     "Artur Jacobina",
     "Developer",
-    images['daniel.jpg'],
+    images['arthur.jpeg'],
     {
-      x: "https://x.com",
-      telegram: "https://telegram.com",
-      linkedin: "https://www.linkedin.com/in/danielyukihiga/",
+      x: "https://x.com/Arthur1Jacobina",
+      telegram: "https://t.me/arthurjacobina",
+      linkedin: "https://www.linkedin.com/in/arthur-jacobina",
     }
   ),
   new TeamMember(
     "Vinicios",
     "Developer",
-    images['daniel.jpg'],
+    images['vinicios.jpg'],
     {
-      x: "https://x.com",
-      telegram: "https://telegram.com",
-      linkedin: "https://www.linkedin.com/in/danielyukihiga/",
+      x: "https://x.com/ViniciosLugli",
+      telegram: "https://t.me/ViniciosLugli",
+      linkedin: "https://www.linkedin.com/in/vinicioslugli//",
     }
   ),
   new TeamMember(
@@ -111,8 +111,8 @@ const teamMembers: TeamMember[] = [
     "Developer",
     images['felipe.jpeg'],
     {
-      x: "https://x.com",
-      telegram: "https://telegram.com",
+      x: "https://x.com/BorckBryan",
+      telegram: "https://t.me/bryanborck",
       linkedin: "https://www.linkedin.com/in/felipe-farias-ribeiro/",
     }
   ),
