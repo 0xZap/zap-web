@@ -19,10 +19,10 @@ const Header: React.FC = () => {
 
   const menuItems = React.useMemo(() => [
     { label: 'Home', id: 'home' },
-    { label: 'How it Works', id: 'how-it-works' },
-    { label: 'Product', id: 'product' },
+    // { label: 'How it Works', id: 'how-it-works' },
+    // { label: 'Product', id: 'product' },
     // { label: 'Blogs', id: 'blogs' },
-    { label: 'Use Cases', id: 'use-cases' },
+    // { label: 'Use Cases', id: 'use-cases' },
     { label: 'Team', id: 'team' },
   ], []);
 

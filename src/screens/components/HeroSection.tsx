@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           fontFamily: "Space Grotesk, sans-serif",
         }}
       >
-        Allow anyone to generate <br></br> ZkProofs to any internet
+        Building Decentralized Infrastructure <br></br> for Data as an Asset Market
       </Typography>
       <Box
         sx={{

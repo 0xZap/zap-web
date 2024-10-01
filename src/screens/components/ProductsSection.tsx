@@ -38,18 +38,7 @@ const ProductsSection: React.FC<ProductSectionProps> = ({ id }) => {
           margin: "0 auto",
         }}
       >
-        <Box sx={{ gridArea: { md: "product1" } }}>
-          <img
-            src={require("../../assets/product/product1.png")}
-            alt="Product 1"
-            style={{
-              width: "100%",
-              height: "auto",
-              maxWidth: "300px",
-              borderRadius: "8px",
-            }}
-          />
-        </Box>
+        //TODO: Change to Zap Data Wallet
         <Box sx={{ gridArea: { md: "product2" } }}>
           <img
             src={require("../../assets/product/product2.png")}
@@ -62,6 +51,7 @@ const ProductsSection: React.FC<ProductSectionProps> = ({ id }) => {
             }}
           />
         </Box>
+        //TODO: Change to Decentralized Data Pools
         <Box sx={{ gridArea: { md: "product3" } }}>
           <img
             src={require("../../assets/product/product3.png")}

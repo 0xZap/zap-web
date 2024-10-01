@@ -17,9 +17,9 @@ const LandingPage: React.FC = () => {
       <CssBaseline />
       <Header />
       <HeroSection id="home"/>
-      <HowItWorksSection id="how-it-works"/>
-      <ProductsSection id="product"/>
-      <UseCaseSection id="use-cases" />
+      {/* <ProductsSection id="product"/> */}
+      {/* <HowItWorksSection id="how-it-works"/> */}
+      {/* <UseCaseSection id="use-cases" /> */}
       {/* <BlogSection /> */}
       <TeamSection id="team"/>
       <SubscribeSection />
