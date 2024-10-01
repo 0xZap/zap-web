@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           fontFamily: "Space Grotesk, sans-serif",
         }}
       >
-        Building Decentralized Infrastructure <br></br> for Data as an Asset Market
+        Building Decentralized Infrastructure for <br></br> Data as an Asset Market
       </Typography>
       <Box
         sx={{
