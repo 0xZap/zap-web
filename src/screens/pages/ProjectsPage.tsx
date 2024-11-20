@@ -94,51 +94,63 @@ const CategoryTabs = ({ categories, selectedCategory, onSelect }: {
 }) => (
   <Box
     sx={{
-      display: 'flex',
-      gap: 2,
+      overflowX: 'auto',
+      width: '100%',
+      '&::-webkit-scrollbar': {
+        display: 'none'
+      },
+      scrollbarWidth: 'none',
       mb: 4,
-      backgroundColor: 'rgba(0, 0, 0, 0.3)',
-      padding: '8px',
-      borderRadius: '12px',
-      width: 'fit-content',
-      margin: '0 auto'
     }}
   >
-    {categories.map((category) => (
-      <Box
-        key={category.title}
-        onClick={() => onSelect(category.title)}
-        sx={{
-          cursor: 'pointer',
-          padding: '8px 24px',
-          borderRadius: '8px',
-          backgroundColor: selectedCategory === category.title ? 'rgba(0, 255, 100, 0.1)' : 'transparent',
-          color: selectedCategory === category.title ? '#00ff64' : '#ffffff',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 1,
-          transition: 'all 0.3s ease',
-          '&:hover': {
-            backgroundColor: selectedCategory === category.title ? 'rgba(0, 255, 100, 0.15)' : 'rgba(255, 255, 255, 0.05)'
-          }
-        }}
-      >
-        <Typography variant="body1">
-          {category.title}
-        </Typography>
-        <Typography
-          variant="body2"
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 2,
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        padding: '8px',
+        borderRadius: '12px',
+        width: 'fit-content',
+        margin: '0 auto',
+        minWidth: { xs: 'max-content', md: 'auto' }
+      }}
+    >
+      {categories.map((category) => (
+        <Box
+          key={category.title}
+          onClick={() => onSelect(category.title)}
           sx={{
-            backgroundColor: 'rgba(0, 255, 100, 0.1)',
-            padding: '2px 8px',
-            borderRadius: '12px',
-            fontSize: '0.75rem'
+            cursor: 'pointer',
+            padding: { xs: '6px 16px', md: '8px 24px' },
+            borderRadius: '8px',
+            backgroundColor: selectedCategory === category.title ? 'rgba(0, 255, 100, 0.1)' : 'transparent',
+            color: selectedCategory === category.title ? '#00ff64' : '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              backgroundColor: selectedCategory === category.title ? 'rgba(0, 255, 100, 0.15)' : 'rgba(255, 255, 255, 0.05)'
+            }
           }}
         >
-          {category.projects.length}
-        </Typography>
-      </Box>
-    ))}
+          <Typography variant="body1" sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
+            {category.title}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              backgroundColor: 'rgba(0, 255, 100, 0.1)',
+              padding: '2px 8px',
+              borderRadius: '12px',
+              fontSize: '0.75rem'
+            }}
+          >
+            {category.projects.length}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
   </Box>
 );
 
@@ -323,18 +335,18 @@ const AIProjectCard = ({ project }: { project: AIProjectMetrics }) => (
 );
 
 const ProjectsPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>("DeAI");
 
   const categories: Category[] = [
     {
-      title: "AI / Agents",
+      title: "DeAI",
       symbol: "AI",
       projects: [
         // { title: "Project Alpha", marketCap: 50000000, progress: 15.5, symbol: "ALP" },
       ]
     },
     {
-      title: "Finance",
+      title: "DeMarketing",
       symbol: "FIN",
       projects: []
     },
@@ -347,9 +359,7 @@ const ProjectsPage: React.FC = () => {
 
   const allProjects = categories.flatMap(cat => cat.projects);
 
-  const projectsToDisplay = selectedCategory === "All" 
-    ? allProjects 
-    : categories.find(cat => cat.title === selectedCategory)?.projects || [];
+  const projectsToDisplay = categories.find(cat => cat.title === selectedCategory)?.projects || [];
 
   return (
     <>
@@ -366,10 +376,7 @@ const ProjectsPage: React.FC = () => {
         </Typography>
         
         <CategoryTabs 
-          categories={[
-            { title: "All", symbol: "ALL", projects: allProjects },
-            ...categories
-          ]}
+          categories={categories}
           selectedCategory={selectedCategory}
           onSelect={setSelectedCategory}
         />

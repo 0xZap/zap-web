@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 const Header: React.FC = () => {
   const theme = useTheme();
   const location = useLocation();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [activeSection, setActiveSection] = useState<string>('home');
 
@@ -21,7 +21,6 @@ const Header: React.FC = () => {
 
   const menuItems = React.useMemo(() => [
     { label: 'Home', id: 'home', path: '/#home' },
-    { label: 'How it Works', id: 'how-it-works', path: '/#how-it-works' },
     { label: 'Team', id: 'team', path: '/#team' },
   ], []);
 

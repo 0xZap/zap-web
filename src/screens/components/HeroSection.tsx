@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           fontFamily: "Space Grotesk, sans-serif",
         }}
       >
-        Own and monetize <br></br> Your Data-as-an-Asset <br></br> Without sacrificing privacy
+        Building the next <br></br> Data-as-an-Asset <br></br> Solutions
       </Typography>
       <Box
         sx={{
