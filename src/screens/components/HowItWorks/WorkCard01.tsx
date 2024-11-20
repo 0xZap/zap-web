@@ -54,7 +54,7 @@ const WorkCard01: React.FC = () => {
             zIndex: 1,
           }}
         >
-          User requests to <br></br> generate proof
+          User generates data <br></br> with proofs
         </Typography>
       </Box>
       <Box

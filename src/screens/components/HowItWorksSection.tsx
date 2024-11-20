@@ -53,8 +53,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ id }) => {
           color: "#C2CDE7",
         }}
       >
-        Zap is a tool that leverages zkTLS to allow anyone to generate ZkProofs
-        to any internet data they have access to.
+        Zap allow any project or user to build Decentralized Data Pools where the community will keep onwership of their own data.
       </Typography>
       <Box
         sx={{

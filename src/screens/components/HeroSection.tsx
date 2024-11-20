@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           fontFamily: "Space Grotesk, sans-serif",
         }}
       >
-        Building Decentralized Infrastructure for <br></br> Data as an Asset Market
+        Own and monetize <br></br> Your Data-as-an-Asset <br></br> Without sacrificing privacy
       </Typography>
       <Box
         sx={{
@@ -89,6 +89,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
         {/* Add more image layers as needed */}
       </Box>
       <Button
+        href="/projects"
         variant="contained"
         sx={{
           opacity: 0.8,
@@ -98,9 +99,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           fontSize: "16px",
           textTransform: "none",
           marginTop: "20px",
+          '&:hover': {
+            backgroundColor: "#0a365e",
+            cursor: "pointer",
+            transform: "scale(1.05)",
+          },
         }}
       >
-        Coming Soon
+        Go to Projects
       </Button>
     </Box>
   );

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useTheme, useMediaQuery, AppBar, Toolbar, IconButton, Typography, Container, Box, Button, Menu, MenuItem, Link as MUILink } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../assets/logo-appname.svg';
+import { useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const theme = useTheme();
+  const location = useLocation();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -18,33 +20,38 @@ const Header: React.FC = () => {
   };
 
   const menuItems = React.useMemo(() => [
-    { label: 'Home', id: 'home' },
-    // { label: 'How it Works', id: 'how-it-works' },
-    // { label: 'Product', id: 'product' },
-    // { label: 'Blogs', id: 'blogs' },
-    // { label: 'Use Cases', id: 'use-cases' },
-    { label: 'Team', id: 'team' },
+    { label: 'Home', id: 'home', path: '/#home' },
+    { label: 'How it Works', id: 'how-it-works', path: '/#how-it-works' },
+    { label: 'Team', id: 'team', path: '/#team' },
   ], []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + parseInt(theme.spacing(10), 10); // Adjust based on header height
+    // Set active section based on current route
+    if (location.pathname === '/') {
+      // On homepage, handle scroll
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY + parseInt(theme.spacing(10), 10);
 
-      menuItems.forEach((item) => {
-        const section = document.getElementById(item.id);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(item.id);
+        menuItems.forEach((item) => {
+          const section = document.getElementById(item.id);
+          if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              setActiveSection(item.id);
+            }
           }
-        }
-      });
-    };
+        });
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [menuItems, theme]);
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      // On other pages, set active section based on pathname
+      const currentPath = location.pathname.substring(1); // Remove leading slash
+      setActiveSection(currentPath || 'home');
+    }
+  }, [location.pathname, menuItems, theme]);
 
   return (
     <AppBar
@@ -60,12 +67,13 @@ const Header: React.FC = () => {
         <Toolbar
           disableGutters
           sx={{
+            display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: theme.spacing(2, 0),
           }}
         >
-          {/* Logo and Mobile Menu Icon */}
+          {/* Logo */}
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {isMobile && (
               <IconButton
@@ -88,46 +96,8 @@ const Header: React.FC = () => {
             </Typography>
           </Box>
 
-          {/* Menu Items */}
-          {isMobile ? (
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              sx={{
-                '& .MuiPaper-root': {
-                  backgroundColor: 'rgba(10, 25, 41, 0.95)',
-                  borderRadius: '10px',
-                  borderWidth: '0.8px',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                  borderStyle: 'solid',
-                  minWidth: '200px',
-                },
-              }}
-            >
-              {menuItems.map((item) => (
-                <MenuItem
-                  key={item.id}
-                  onClick={handleMenuClose}
-                  sx={{
-                    color: 'white',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                    },
-                  }}
-                >
-                  <MUILink
-                    href={`#${item.id}`}
-                    underline="none"
-                    color="inherit"
-                    sx={{ width: '100%' }}
-                  >
-                    {item.label}
-                  </MUILink>
-                </MenuItem>
-              ))}
-            </Menu>
-          ) : (
+          {/* Center Menu */}
+          {!isMobile && (
             <Box
               sx={{
                 backgroundColor: 'rgba(255, 255, 255, 0.08)',
@@ -146,14 +116,14 @@ const Header: React.FC = () => {
               {menuItems.map((item) => (
                 <MUILink
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={item.path}
                   underline="none"
                   sx={{
-                    color: activeSection === item.id ? `${theme.palette.primary.main}` : '#ffffff', 
+                    color: activeSection === item.id ? `${theme.palette.primary.main}` : '#ffffff',
                     textTransform: 'capitalize',
                     fontWeight: activeSection === item.id ? 'bold' : 'normal',
                     '&:hover': {
-                      color: activeSection === item.id ? `${theme.palette.primary.main}` : '#a0aec0', 
+                      color: activeSection === item.id ? `${theme.palette.primary.main}` : '#a0aec0',
                     },
                     padding: '5px 5px',
                   }}
@@ -164,31 +134,29 @@ const Header: React.FC = () => {
             </Box>
           )}
 
-          {/* "Coming Soon" Button */}
-          <Button
-            variant="contained"
-            sx={{
-              opacity: 0.8,
-              borderRadius: '20px',
-              backgroundColor: '#090953',
-              padding: '8px 30px',
-              borderWidth: '0.6px',
-              borderColor: `${theme.palette.primary.main}`,
-              borderStyle: 'solid',
-              fontSize: '16px',
-              textTransform: 'none',
-              transition: 'transform 0.7s, box-shadow 0.3s',
-              display: { xs: 'none', sm: 'block' },
-              '&:hover': {
-                backgroundColor: '#090953',
-                cursor: 'pointer',
-                transform: 'scale(1.05)', 
-                boxShadow: theme.shadows[1], 
-              },
-            }}
-          >
-            Coming Soon
-          </Button>
+          {/* Right Button */}
+          {!isMobile && (
+            <Button
+              href="/projects"
+              variant="contained"
+              sx={{
+                opacity: 0.8,
+                borderRadius: "20px",
+                backgroundColor: "#0a365e",
+                padding: "8px 30px",
+                fontSize: "16px",
+                textTransform: "none",
+                marginTop: "20px",
+                '&:hover': {
+                  backgroundColor: "#0a365e",
+                  cursor: "pointer",
+                  transform: "scale(1.05)",
+                },
+              }}
+            >
+              Browse Projects
+            </Button>
+          )}
         </Toolbar>
       </Container>
     </AppBar>

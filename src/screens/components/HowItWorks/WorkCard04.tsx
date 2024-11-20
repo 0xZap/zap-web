@@ -72,8 +72,7 @@ const WorkCard04: React.FC = () => {
             zIndex: 1,
           }}
         >
-          Zap SDK and Extension <br></br> verifies with Local or <br></br>{" "}
-          External Verifier
+          Third parties<br></br> can execute Blind Computation <br></br>{" "}
         </Typography>
       </Box>
     </Box>

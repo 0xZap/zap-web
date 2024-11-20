@@ -2,6 +2,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import hugimage from '../../../assets/usecase/use_hug.svg';
 import starsimage from '../../../assets/usecase/use_stars.svg';
+import Button from '@mui/material/Button';
 
 const TeamTitle = () => {
     const theme = useTheme();
@@ -61,7 +62,7 @@ const TeamTitle = () => {
                 lineHeight: 1,
             }}
         >
-            Our amazing team
+            Our Team
         </Typography>
 
         {/* Body Typography */}
@@ -82,6 +83,7 @@ const TeamTitle = () => {
         >
             We are united by our passion to bring <br></br> the decentralized data concept to the masses.
         </Typography>
+
         </Box>
     );
 };

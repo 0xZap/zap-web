@@ -54,7 +54,7 @@ const WorkCard05: React.FC = () => {
             zIndex: 1,
           }}
         >
-          Share or Store <br></br> Data Proofs
+          Yields are distributed <br></br> to Data Pool Owners
         </Typography>
       </Box>
       <Box

@@ -18,11 +18,11 @@ const LandingPage: React.FC = () => {
       <Header />
       <HeroSection id="home"/>
       {/* <ProductsSection id="product"/> */}
-      {/* <HowItWorksSection id="how-it-works"/> */}
+      <HowItWorksSection id="how-it-works"/>
       {/* <UseCaseSection id="use-cases" /> */}
       {/* <BlogSection /> */}
       <TeamSection id="team"/>
-      <SubscribeSection />
+      {/* <SubscribeSection /> */}
       <Footer />
     </>
   );

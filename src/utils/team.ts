@@ -96,26 +96,6 @@ const teamMembers: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/arthur-jacobina",
     }
   ),
-  new TeamMember(
-    "Vinicios",
-    "Developer",
-    images['vinicios.jpg'],
-    {
-      x: "https://x.com/ViniciosLugli",
-      telegram: "https://t.me/ViniciosLugli",
-      linkedin: "https://www.linkedin.com/in/vinicioslugli//",
-    }
-  ),
-  new TeamMember(
-    "Felipe Ribeiro",
-    "Developer",
-    images['felipe.jpeg'],
-    {
-      x: "https://x.com/BorckBryan",
-      telegram: "https://t.me/bryanborck",
-      linkedin: "https://www.linkedin.com/in/felipe-farias-ribeiro/",
-    }
-  ),
 ];
 
 export default teamMembers;

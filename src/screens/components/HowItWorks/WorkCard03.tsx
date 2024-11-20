@@ -54,8 +54,7 @@ const WorkCard03: React.FC = () => {
             zIndex: 1,
           }}
         >
-          SDK send HTTPS <br></br> request with Notary <br></br> Proof to Auth
-          Servers
+          Data is verified and stored <br></br> in a Decentralized Storage Layer <br></br> 
         </Typography>
       </Box>
       <Box
